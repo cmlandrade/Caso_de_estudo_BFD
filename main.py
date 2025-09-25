@@ -20,6 +20,15 @@ class Book:
         self.genre = genre
         self.publish_date = publish_date
     
+    def to_dict(self):
+        return {
+            "idBook": self.idBook,
+            "title": self.title,
+            "author": self.author,
+            "genre": self.genre,
+            "publish_date": self.publish_date
+            }
+    
     @classmethod
     def registerBook(cls):
     
@@ -45,14 +54,7 @@ class Book:
             )
         save_book_db(new_book.to_dict())
 
-    def to_dict(self):
-        return {
-            "idBook": self.idBook,
-            "title": self.title,
-            "author": self.author,
-            "genre": self.genre,
-            "publish_date": self.publish_date
-        }
+
 
 
 Book.registerBook()
