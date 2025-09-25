@@ -8,7 +8,7 @@ book = []
 member = []
 loan = []
 
-def save_book_to_db(book_data):
+def save_book_db(book_data):
     books_db.append(book_data)
 
 def register_new_book():
@@ -56,5 +56,5 @@ class Book:
     def registerBook(self):
 
         book_data = self.to_dict()
-        save_book_to_db(book_data)
+        save_book_db(book_data)
 
