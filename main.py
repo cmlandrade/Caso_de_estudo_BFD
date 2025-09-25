@@ -32,12 +32,12 @@ class Book:
     @classmethod
     def registerBook(cls):
     
-        max_id = 0
+        ini_id = 0
         for livro in books_db:
             current_id = livro["idBook"]
-            if current_id > max_id:
-                max_id = current_id
-        new_id = max_id + 1
+            if current_id > ini_id:
+                ini_id = current_id
+        new_id = ini_id + 1
         title = input("Insert title: ")
         author = input("Insert Author: ")
         genre = input("Insert genre: ")
