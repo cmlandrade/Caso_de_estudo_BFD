@@ -58,3 +58,49 @@ class Book:
 
 
 Book.registerBook()
+
+class Member:
+    def __init__(self, cpf, name, email, password):
+        self.idMember = cpf
+        self.name = name
+        self.email = email
+        self.password = password
+    
+    def register_Member(self):
+        members[self.idMember] = self
+        print(f"\n Parabéns,{self.name}. Sua conta foi cadastrada com sucesso!")
+    
+    '''def listLoan(self):'''
+
+    def search_Member(self, idMember):
+        return members.get(idMember)
+    
+    '''def listMembers(self):'''
+
+    def delete_Member(self):
+        if self.idMember in members:
+            del members[self.idMember]
+            print(f"Até mais,{self.name}. Sua conta foi deletada com sucesso! ")
+        else:
+            print("Não foi possível encontrar sua conta.")
+
+class Loan:
+    def __init__ (self, member, book, dateOrder, dateReturn):
+        self.idLoan = len(loan) + 1
+        self.member = member
+        self.book = book
+        self.dateOrder = dateOrder
+        self.dateReturn = dateReturn
+
+    def create_Loan(self, member, book):
+        return Loan(member, book)
+    
+    def cancel_Loan(self):
+      self.status = "Cancelado"
+      print(f"Empréstimo {self.idLoan} cancelado com sucesso!")
+
+    def confirm_Loan(self):
+        self.status = "Confirmado"
+        print(f"Empréstimo {self.idLoan} confirmado com sucesso!")
+
+    '''def get_details(self)'''
